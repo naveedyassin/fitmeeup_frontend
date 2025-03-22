@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - FitnessClub</title>
+    <link rel="stylesheet" href="joinnow.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>FitnessClub</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="join-section">
+        <div class="container">
+            <h2>Join FitnessClub</h2>
+            <p>Fill out the form below to become a member:</p>
+            <form action="submit.html" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script>
+            document.getElementById("joinForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Store form data (For Now, Just Logging It)
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let phone = document.getElementById("phone").value;
+                console.log("Form Submitted:", { name, email, phone });
+    
+                // Hide Form, Show Thank You Message
+                document.getElementById("joinForm").style.display = "none";
+                document.getElementById("thankYouMessage").style.display = "block";
+    
+                // OPTIONAL: Send Data to Backend (PHP, Node.js, Firebase, etc.)
+            });
+        </script>
+    </section>
+    <footer>
+        <p>&copy; 2024 FitnessClub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
